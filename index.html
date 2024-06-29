@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Krishna Code editor</title>
+
+    <link rel="stylesheet" href="prism.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <style>
+      .blink {
+        animation: blink 1s step-end infinite;
+        position: relative;
+        left: -10px;
+        background-color: #4c3f33;
+        padding: 1px;
+        color: #4c3f33;
+      }
+
+      @keyframes blink {
+        50% {
+          visibility: hidden;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canva">
+      <div class="container-fluid">
+        <div id="banner">
+          <div class="console-container pt-4">
+            <span id="text"></span>
+            <div class="console-underscore" id="console">&#95;</div>
+          </div>
+        </div>
+
+        <div contenteditable="true">
+          <!--<textarea> hi</textarea>
+        <pre><code class="language-css">hi</code></pre>-->
+        </div>
+        <hr class="progress">
+        <div class="row align-items-center">
+            <div class="container-fluid col-7" >
+                <div class="text"></div>
+              </div>
+              <div class="col-5">
+                  <h4 class="shimmer">Select a language:</h4>
+                  <select id="languageSelector"></select>
+                </div>
+        </div>
+
+        <div style="width: 90vw" class="code-editor">
+          <pre
+            data-download-link
+          ><code class="language-py line-numbers match-braces rainbow-braces" style="width: 90vw;min-height:40vh;">print('Editor Created by Krishna Gupta')
+print('Select the Language from top and then Click Inside the editor and start typing your code')</code></pre>
+          <textarea
+            style="
+              background-color: aqua;
+              position: relative;
+              top: -90px;
+              opacity: 0.01;
+            "
+            name=""
+            id=""
+            cols="190"
+            rows="4"
+          ></textarea>
+        </div>
+      </div>
+      <div class="row" style="position:fixed;bottom: 0px;width: 100vw;">
+        <div
+          class="col-6 row"
+          style="
+
+            background-image: url('https://www.icegif.com/wp-content/uploads/2023/02/icegif-519.gif');
+            height: 20vh;
+            background-size: contain;
+            background-repeat: no-repeat;
+          "
+        >
+        <div class="offset-3 p-5">
+            <div class="text-center" style="color: #dfe6e9;font-size: larger;">
+                <div>&copy; 2024</div>
+                <div><strong> Made with <i class="fa fa-heart" style="color: red;"></i> by Krishna Gupta</strong> </div>
+
+                <div>    All Rights Reserved </div> </div>
+        </div>
+
+    </div>
+        <div
+          class="col-6"
+          style="
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/29fa7f19-5e3e-40aa-ac11-14e465dbb2a2/d3f7w6p-4abbfdf7-a6d8-417d-81ee-349eac60956e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI5ZmE3ZjE5LTVlM2UtNDBhYS1hYzExLTE0ZTQ2NWRiYjJhMlwvZDNmN3c2cC00YWJiZmRmNy1hNmQ4LTQxN2QtODFlZS0zNDllYWM2MDk1NmUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.vjFyRrwGLSWvozeoMzr7ruHmzBXEftO8OIQaclGy5I8');
+            height: 20vh;
+            background-size: contain;
+            background-repeat: no-repeat;
+          "
+        >
+
+        <div id="foot">
+            <ul>
+              <li><a href="https://www.linkedin.com/in/krishna-g-2000786/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+              <li><a href="mailto:krishna2gupta2000@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+              <li><a href="https://github.com/krishna2gupta2000"><i class="fa fa-github-square" aria-hidden="true"></i></a></li>
+              <li>
+                <h2>👋</h2>
+              </li>
+            </ul>
+          </div>
+    </div>
+      </div>
+    </div>
+
+    <script>
+      var editor = document.querySelector(".code-editor textarea");
+      var visualizer = document.querySelector(".code-editor code");
+      const languageSelector = document.getElementById("languageSelector");
+
+      var supportedLanguages = {
+        python: "Python",
+        plaintext: "Plain text",
+        text: "Plain text",
+        txt: "Plain text",
+        svg: "SVG",
+        mathml: "MathML",
+        ssml: "SSML",
+        rss: "RSS",
+        css: "CSS",
+        clike: "C-like",
+        js: "JavaScript",
+        abap: "ABAP",
+        abnf: "ABNF",
+        al: "AL",
+        antlr4: "ANTLR4",
+        g4: "ANTLR4",
+        apacheconf: "Apache Configuration",
+        apl: "APL",
+        aql: "AQL",
+        ino: "Arduino",
+        arff: "ARFF",
+        armasm: "ARM Assembly",
+        "arm-asm": "ARM Assembly",
+        art: "Arturo",
+        asciidoc: "AsciiDoc",
+        adoc: "AsciiDoc",
+        aspnet: "ASP.NET (C#)",
+        asm6502: "6502 Assembly",
+        asmatmel: "Atmel AVR Assembly",
+        autohotkey: "AutoHotkey",
+        autoit: "AutoIt",
+        avisynth: "AviSynth",
+        avs: "AviSynth",
+        "avro-idl": "Avro IDL",
+        avdl: "Avro IDL",
+        awk: "AWK",
+        gawk: "GAWK",
+        sh: "Shell",
+        basic: "BASIC",
+        bbcode: "BBcode",
+        bbj: "BBj",
+        bnf: "BNF",
+        rbnf: "RBNF",
+        bqn: "BQN",
+        bsl: "BSL (1C:Enterprise)",
+        oscript: "OneScript",
+        csharp: "C#",
+        cs: "C#",
+        dotnet: "C#",
+        cpp: "C++",
+        cfscript: "CFScript",
+        cfc: "CFScript",
+        cil: "CIL",
+        cilkc: "Cilk/C",
+        "cilk-c": "Cilk/C",
+        cilkcpp: "Cilk/C++",
+        "cilk-cpp": "Cilk/C++",
+        cilk: "Cilk/C++",
+        cmake: "CMake",
+        cobol: "COBOL",
+        coffee: "CoffeeScript",
+        conc: "Concurnas",
+        csp: "Content-Security-Policy",
+        "css-extras": "CSS Extras",
+        csv: "CSV",
+        cue: "CUE",
+        dataweave: "DataWeave",
+        dax: "DAX",
+        django: "Django/Jinja2",
+        jinja2: "Django/Jinja2",
+        "dns-zone-file": "DNS zone file",
+        "dns-zone": "DNS zone file",
+        dockerfile: "Docker",
+        dot: "DOT (Graphviz)",
+        gv: "DOT (Graphviz)",
+        ebnf: "EBNF",
+        editorconfig: "EditorConfig",
+        ejs: "EJS",
+        etlua: "Embedded Lua templating",
+        erb: "ERB",
+        "excel-formula": "Excel Formula",
+        xlsx: "Excel Formula",
+        xls: "Excel Formula",
+        fsharp: "F#",
+        "firestore-security-rules": "Firestore security rules",
+        ftl: "FreeMarker Template Language",
+        gml: "GameMaker Language",
+        gamemakerlanguage: "GameMaker Language",
+        gap: "GAP (CAS)",
+        gcode: "G-textarea",
+        gdscript: "GDScript",
+        gedcom: "GEDCOM",
+        gettext: "gettext",
+        po: "gettext",
+        glsl: "GLSL",
+        gn: "GN",
+        gni: "GN",
+        "linker-script": "GNU Linker Script",
+        ld: "GNU Linker Script",
+        "go-module": "Go module",
+        "go-mod": "Go module",
+        graphql: "GraphQL",
+        hbs: "Handlebars",
+        hs: "Haskell",
+        hcl: "HCL",
+        hlsl: "HLSL",
+        http: "HTTP",
+        hpkp: "HTTP Public-Key-Pins",
+        hsts: "HTTP Strict-Transport-Security",
+        ichigojam: "IchigoJam",
+        "icu-message-format": "ICU Message Format",
+        idr: "Idris",
+        ignore: ".ignore",
+        gitignore: ".gitignore",
+        hgignore: ".hgignore",
+        npmignore: ".npmignore",
+        inform7: "Inform 7",
+        javadoc: "JavaDoc",
+        javadoclike: "JavaDoc-like",
+        javastacktrace: "Java stack trace",
+        jq: "JQ",
+        jsdoc: "JSDoc",
+        "js-extras": "JS Extras",
+        json: "JSON",
+        webmanifest: "Web App Manifest",
+        json5: "JSON5",
+        jsonp: "JSONP",
+        jsstacktrace: "JS stack trace",
+        "js-templates": "JS Templates",
+        keepalived: "Keepalived Configure",
+        kts: "Kotlin Script",
+        kt: "Kotlin",
+        kumir: "KuMir (КуМир)",
+        kum: "KuMir (КуМир)",
+        latex: "LaTeX",
+        tex: "TeX",
+        context: "ConTeXt",
+        lilypond: "LilyPond",
+        ly: "LilyPond",
+        emacs: "Lisp",
+        elisp: "Lisp",
+        "emacs-lisp": "Lisp",
+        llvm: "LLVM IR",
+        log: "Log file",
+        lolcode: "LOLCODE",
+        magma: "Magma (CAS)",
+        md: "Markdown",
+        "markup-templating": "Markup templating",
+        matlab: "MATLAB",
+        maxscript: "MAXScript",
+        mel: "MEL",
+        metafont: "METAFONT",
+        mongodb: "MongoDB",
+        moon: "MoonScript",
+        n1ql: "N1QL",
+        n4js: "N4JS",
+        n4jsd: "N4JS",
+        "nand2tetris-hdl": "Nand To Tetris HDL",
+        naniscript: "Naninovel Script",
+        nani: "Naninovel Script",
+        nasm: "NASM",
+        neon: "NEON",
+        nginx: "nginx",
+        nsis: "NSIS",
+        objectivec: "Objective-C",
+        objc: "Objective-C",
+        ocaml: "OCaml",
+        opencl: "OpenCL",
+        openqasm: "OpenQasm",
+        qasm: "OpenQasm",
+        parigp: "PARI/GP",
+        objectpascal: "Object Pascal",
+        psl: "PATROL Scripting Language",
+        pcaxis: "PC-Axis",
+        px: "PC-Axis",
+        peoplecode: "PeopleCode",
+        pcode: "PeopleCode",
+        php: "PHP",
+        phpdoc: "PHPDoc",
+        "php-extras": "PHP Extras",
+        "plant-uml": "PlantUML",
+        plantuml: "PlantUML",
+        plsql: "PL/SQL",
+        powerquery: "PowerQuery",
+        pq: "PowerQuery",
+        mscript: "PowerQuery",
+        powershell: "PowerShell",
+        promql: "PromQL",
+        properties: ".properties",
+        protobuf: "Protocol Buffers",
+        purebasic: "PureBasic",
+        pbfasm: "PureBasic",
+        purs: "PureScript",
+        py: "Python",
+        qsharp: "Q#",
+        qs: "Q#",
+        q: "Q (kdb+ database)",
+        qml: "QML",
+        rkt: "Racket",
+        cshtml: "Razor C#",
+        razor: "Razor C#",
+        jsx: "React JSX",
+        tsx: "React TSX",
+        renpy: "Ren'py",
+        rpy: "Ren'py",
+        res: "ReScript",
+        rest: "reST (reStructuredText)",
+        robotframework: "Robot Framework",
+        robot: "Robot Framework",
+        rb: "Ruby",
+        sas: "SAS",
+        sass: "Sass (Sass)",
+        scss: "Sass (SCSS)",
+        "shell-session": "Shell session",
+        "sh-session": "Shell session",
+        shellsession: "Shell session",
+        sml: "SML",
+        smlnj: "SML/NJ",
+        solidity: "Solidity (Ethereum)",
+        sol: "Solidity (Ethereum)",
+        "solution-file": "Solution file",
+        sln: "Solution file",
+        soy: "Soy (Closure Template)",
+        sparql: "SPARQL",
+        rq: "SPARQL",
+        "splunk-spl": "Splunk SPL",
+        sqf: "SQF: Status Quo Function (Arma 3)",
+        sql: "SQL",
+        stata: "Stata Ado",
+        iecst: "Structured Text (IEC 61131-3)",
+        supercollider: "SuperCollider",
+        sclang: "SuperCollider",
+        systemd: "Systemd configuration file",
+        "t4-templating": "T4 templating",
+        "t4-cs": "T4 Text Templates (C#)",
+        t4: "T4 Text Templates (C#)",
+        "t4-vb": "T4 Text Templates (VB)",
+        tap: "TAP",
+        tt2: "Template Toolkit 2",
+        toml: "TOML",
+        trickle: "trickle",
+        troy: "troy",
+        trig: "TriG",
+        ts: "TypeScript",
+        tsconfig: "TSConfig",
+        uscript: "UnrealScript",
+        uc: "UnrealScript",
+        uorazor: "UO Razor Script",
+        uri: "URI",
+        url: "URL",
+        vbnet: "VB.Net",
+        vhdl: "VHDL",
+        vim: "vim",
+        "visual-basic": "Visual Basic",
+        vba: "VBA",
+        vb: "Visual Basic",
+        wasm: "WebAssembly",
+        "web-idl": "Web IDL",
+        webidl: "Web IDL",
+        wgsl: "WGSL",
+        wiki: "Wiki markup",
+        wolfram: "Wolfram language",
+        nb: "Mathematica Notebook",
+        wl: "Wolfram language",
+        xeoracube: "XeoraCube",
+        "xml-doc": "XML doc (.net)",
+        xojo: "Xojo (REALbasic)",
+        xquery: "XQuery",
+        yaml: "YAML",
+        yml: "YAML",
+        yang: "YANG",
+      };
+      Object.keys(supportedLanguages).forEach((key) => {
+        const value = supportedLanguages[key];
+        const option = document.createElement("option");
+        option.value = key;
+        option.textContent = value;
+        languageSelector.appendChild(option);
+      });
+
+      languageSelector.addEventListener("change", () => {
+        const selectedLanguage = languageSelector.value;
+        //visualizer.classList.remove(...supportedLanguages.map(lang => `language-${lang}`));
+        for (const lang in supportedLanguages) {
+          if (
+            supportedLanguages.hasOwnProperty(lang) &&
+            supportedLanguages[lang]
+          ) {
+            visualizer.classList.remove(`language-${lang}`);
+          }
+        }
+        visualizer.classList.add(`language-${selectedLanguage}`);
+        Prism.highlightElement(codeSnippet);
+      });
+
+      editor.addEventListener("input", (e) => {
+        visualizer.innerHTML = e.target.value + "|";
+        Prism.highlightAll();
+        visualizer.innerHTML =
+          visualizer.innerHTML + '<span class="blink">|</span>';
+      }); /*
+visualizer.addEventListener("input", (e) => {
+   Prism.highlightAll();
+})*/
+    </script>
+    <script src="script.js"></script>
+
+    <script src="prism.js"></script>
+  </body>
+</html>
